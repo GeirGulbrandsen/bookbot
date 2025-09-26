@@ -1,5 +1,4 @@
-from bdb import effective
-
+from stats import count_words
 
 def get_book_text(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -8,6 +7,7 @@ def get_book_text(path):
 
 def main():
     book_text = get_book_text('books/frankenstein.txt')
-    print(book_text)
-
+    word_count = count_words(book_text)
+    print(f'Found {word_count} total words')
+ 
 main()
